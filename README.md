@@ -1,7 +1,6 @@
 # Fantasy Football GPT Chat Bot Using Retrieval Augmented Generation
 https://fantasy-rag-9f91dc013c3c.herokuapp.com/
 
-**Note**: To use this code, you need to setup and add your own API Keys to rag.py and data_retrieval.py. The website runs from a different private repo with valid API keys. This repo may be out of date with the repository used for running that website.
 
 ## Summary
 This repository runs a GPT-based chatbot that uses retrieval augmentation generation (RAG) to provide real time answers to fantasy football related questions. As of 08/25/24, we currently use GPT-4o-mini as the core GPT model in our RAG app. Below is an example of a conversation, note that it has real time injury data and analysis.
@@ -28,6 +27,13 @@ On Aug 25, 2024. The local Reddit and News databases were initialized with 30 da
 2) Query ESPN news articles for fantasy football related news in the past 24 hours.
 
 Our RAG app queries this local databases, rather than calling the respective APIs when needed, to significantly lower the latency of the service. Although this results in more memory storage than needed, the latency improvement outweighs the cons of increased storage.
+
+
+### Instructions for Usage
+To use this code, you need to setup and add your own API Keys to rag.py and data_retrieval.py. The website runs from a different private repo with valid API keys. This repo may be out of date with the repository used for running that website.
+
+
+
 
 ### Conversation History
 Our main app service (main.py) will store user and bot responses in a given session in a conversation history cache, and feed it into the GPT call, to make sure that our application can coherently continue conversations.
