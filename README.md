@@ -9,8 +9,8 @@ This repository runs a GPT-based chatbot that uses retrieval augmentation genera
 
 
 
-## Design Summary
-<img src="rag_design.png" style="width:80%;"/>
+## Design
+<img src="rag_design.png" style="width:90%;"/>
 
 ### Main Flow
 1) **The user prompt is sent** to the retrieval service.
@@ -28,12 +28,9 @@ On Aug 25, 2024. The local Reddit and News databases were initialized with 30 da
 
 Our RAG app queries this local databases, rather than calling the respective APIs when needed, to significantly lower the latency of the service. Although this results in more memory storage than needed, the latency improvement outweighs the cons of increased storage.
 
-
-### Instructions for Usage
-To use this code, you need to setup and add your own API Keys to rag.py and data_retrieval.py. The website runs from a different private repo with valid API keys. This repo may be out of date with the repository used for running that website.
-
-
-
-
 ### Conversation History
 Our main app service (main.py) will store user and bot responses in a given session in a conversation history cache, and feed it into the GPT call, to make sure that our application can coherently continue conversations.
+
+
+## Instructions for Usage
+To use this code, you need to setup and add your own API Keys to rag.py and data_retrieval.py. The website runs from a different private repo with valid API keys. This repo may be out of date with the repository used for running that website.
